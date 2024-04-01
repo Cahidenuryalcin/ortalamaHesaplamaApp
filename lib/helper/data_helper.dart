@@ -6,6 +6,18 @@ class DataHelper {
 
   static List<Ders> tumEklenenDersler= [];
 
+  static double ortalamaHesapla(){
+    double toplamNot=0;
+    double toplamKredi=0;
+
+    tumEklenenDersler.forEach((element) {
+      toplamNot = toplamNot + ( element.kredi * element.harfDegeri);
+      toplamKredi+= element.kredi;
+    });
+
+    return toplamNot/toplamKredi;
+  }
+
   static dersEkle(Ders ders){
     tumEklenenDersler.add(ders);
   }
